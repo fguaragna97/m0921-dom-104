@@ -7,13 +7,10 @@ async function getData() {
   const response = await fetch(API_URL);
   const { results } = await response.json();
 
-  //clear result
   result.innerHTML = "";
 
-  // render result
   renderData(results);
 
-  // event handler on search
   searchInput.addEventListener("keydown", (e) => {
     let inputChar = e.target.value.toLowerCase();
 
@@ -39,7 +36,6 @@ const renderData = (results) => {
     })
     .join("");
   result.innerHTML = html;
-  //   console.log(html);
 };
 
 const filterData = (results, input) => {
